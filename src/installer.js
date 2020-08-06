@@ -102,7 +102,7 @@ class DebianInstaller extends common.ElectronInstaller {
     const dest = path.join(this.stagingDir, this.baseAppDir, 'share/lintian/overrides', this.options.name)
     this.options.logger(`Creating lintian overrides at ${dest}`)
 
-    return common.wrapError('creating lintian overrides file', async () => this.createTemplatedFile(src, dest, '0644'))
+    return common.wrapError('creating lintian overrides file', async () => this.createTemplatedFile(src, dest, 0o644))
   }
 
   /**
